@@ -1,0 +1,38 @@
+@use "./../abstract/colors"as c;
+
+.header {
+ padding: 4rem 0;
+ background-image: url('../images/pattern-circles.svg');
+ background-repeat: no-repeat;
+ background-position: center;
+
+ @media(min-width: 576px) {
+  & {
+   padding: 5rem 0;
+  }
+ }
+
+ .header__title {
+  color: c.$Dark-Desaturated-Blue;
+  text-align: center;
+  font-size: 1.4rem;
+
+  @media(min-width: 576px) {
+   & {
+    font-size: 2rem;
+   }
+  }
+ }
+
+ .header__descripe {
+  color: c.$Grayish-Blue;
+  text-align: center;
+  font-size: .8rem;
+
+  @media(min-width: 576px) {
+   & {
+    font-size: .9rem;
+   }
+  }
+ }
+}
