@@ -3,10 +3,18 @@
 body {
  width: 100%;
  height: 100vh;
+ padding-top: 2rem;
  display: flex;
  flex-direction: column;
  align-items: center;
- justify-content: center;
+ justify-content: flex-start;
  position: relative;
  background-color: c.$Very-Pale-Blue;
+
+ @media(min-width: 576px) {
+  & {
+   padding: 0;
+   justify-content: center;
+  }
+ }
 }
