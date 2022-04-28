@@ -1,0 +1,11 @@
+@use "./../abstract/colors"as c;
+
+.attribution {
+ margin-top: 1.5rem;
+ text-align: center;
+ color: c.$Grayish-Blue;
+
+ a {
+  color: c.$Dark-Desaturated-Blue;
+ }
+}
