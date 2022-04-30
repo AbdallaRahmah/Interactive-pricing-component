@@ -26,6 +26,7 @@ exports.html = html;
 function scss() {
   return src("src/styles/**/*.scss", { sourcemaps: true })
     .pipe(sass())
+    .pipe(prefixer({ cascade: false }))
     .pipe(postcss([cssnano()]))
     .pipe(dest("dist/styles/", { sourcemaps: "." }));
 }

@@ -9,6 +9,8 @@ items.forEach((el) => {
 
   imgItem.setAttribute(`src`, `./images/icon-check.svg`);
 
+  imgItem.setAttribute(`alt`, `check`);
+
   listItem.classList.add(`card__props__item`);
 
   listItem.append(imgItem);
