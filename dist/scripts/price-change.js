@@ -1,4 +1,3 @@
-// 25% x *  75 / 100
 let menu = [
   [`10K pageviews`, 8],
   [`50K pageviews`, 12],

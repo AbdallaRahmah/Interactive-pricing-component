@@ -7,15 +7,19 @@
  align-items: center;
  justify-content: space-between;
  color: c.$Grayish-Blue;
+ font-size: .9rem;
 
  @media(min-width: 576px) {
   & {
    flex-direction: row;
+   font-size: 1rem;
   }
  }
 
  .card__props__list {
   img {
+   width: auto;
+   height: auto;
    margin-right: .5rem
   }
  }
@@ -28,7 +32,7 @@
   border-radius: 1rem;
   color: c.$Grayish-Blue;
   background-color: c.$Dark-Desaturated-Blue;
-  transition: color .3s ease-in-out;
+  transition: .3s ease-in-out;
   cursor: pointer;
 
   @media(min-width: 576px) {

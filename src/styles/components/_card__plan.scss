@@ -7,7 +7,14 @@
  justify-content: center;
  position: relative;
  color: c.$Grayish-Blue;
- font-size: .8rem;
+ font-size: .7rem;
+
+ @media(min-width: 576px) {
+  & {
+   justify-content: center;
+   font-size: .8rem;
+  }
+ }
 
  &::after {
   content: "";
@@ -22,11 +29,11 @@
 
  .card__plan--button {
   height: 1.5rem;
-  margin: 0 1rem;
-  width: 2.5rem;
+  margin: 0 .4rem;
+  width: 3rem;
   border: none;
   border-radius: 1rem;
-  // background-color: c.;
+  background-color: c.$Light-Grayish-Blue;
   cursor: pointer;
   position: relative;
 
@@ -44,7 +51,7 @@
   }
 
   .active--toggle {
-   left: 4px;
+   right: 26px;
   }
  }
 
@@ -64,11 +71,24 @@
    justify-content: center;
    position: absolute;
    top: 0;
-   right: -5rem;
+   right: -4.5rem;
    background-color: c.$Light-Grayish-Red;
    color: c.$Light-Red;
-   font-size: .6rem;
+   font-size: .5rem;
    border-radius: 1rem;
+
+   @media(max-width: 420px) {
+    & {
+     display: none;
+    }
+   }
+
+   @media(min-width: 576px) {
+    & {
+     font-size: .6rem;
+     right: -5rem;
+    }
+   }
   }
  }
 }
