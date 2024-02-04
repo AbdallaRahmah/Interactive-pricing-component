@@ -1,0 +1,416 @@
+// import Manrope font
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+
+// color variables
+$Soft-Cyan: hsl(174, 77%, 80%);
+$Strong-Cyan: hsl(174, 86%, 45%);
+$Light-Grayish-Red: hsl(14, 92%, 95%);
+$Light-Red: hsl(15, 100%, 70%);
+$Pale-Blue: hsl(226, 100%, 87%);
+$White: hsl(0, 0%, 100%);
+$Very-Pale-Blue: hsl(230, 100%, 99%);
+$Light-Grayish-Blue1: hsl(224, 65%, 95%);
+$Light-Grayish-Blue2: hsl(223, 50%, 87%);
+$Grayish-Blue: hsl(225, 20%, 60%);
+$Dark-Desaturated-Blue: hsl(227, 35%, 25%);
+
+// css variables
+:root {
+  --slider-bg: calc(50% - 1.25rem);
+}
+
+// elements reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul {
+  list-style-type: none;
+}
+
+// elements css code start
+.main {
+  padding-top: 1.5rem;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: $Very-Pale-Blue;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    background-color: $Pale-Blue;
+    border-bottom-left-radius: 12rem;
+    opacity: 0.1;
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
+    padding-block: 3.25rem;
+    background-image: url("./../images/pattern-circles.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    .title {
+      margin-bottom: 1.125rem;
+      color: $Dark-Desaturated-Blue;
+      font-size: 1.925rem;
+
+      @media (max-width: 576px) {
+        & {
+          font-size: 1.8rem;
+        }
+      }
+    }
+
+    .description {
+      color: $Grayish-Blue;
+      text-align: center;
+      font-size: 0.925rem;
+
+      @media (max-width: 576px) {
+        & {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .card {
+    padding: 1.5rem 2rem;
+    padding-bottom: 1.5rem;
+    width: min(80%, 520px);
+    background-color: $White;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 0.5rem 0 $Light-Grayish-Blue2;
+    z-index: 2;
+
+    @media (max-width: 576px) {
+      & {
+        padding: 1.5rem;
+      }
+    }
+
+    .card__header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      color: $Grayish-Blue;
+      font-size: 0.825rem;
+
+      @media (max-width: 576px) {
+        & {
+          flex-direction: column;
+          font-size: 0.75rem;
+        }
+      }
+
+      .card__header__title {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      .card__header--range {
+        appearance: none;
+        margin-block: 2rem;
+        width: 100%;
+        order: 3;
+        height: 0.5rem;
+        background-color: $Light-Grayish-Blue1;
+        border-radius: 4rem;
+        cursor: pointer;
+        position: relative;
+
+        @media (max-width: 576px) {
+          & {
+            order: 0;
+          }
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: var(--slider-bg);
+          height: 100%;
+          background-color: $Soft-Cyan;
+          border-radius: 0.5rem;
+          transition: all 50ms linear;
+        }
+
+        &::-webkit-slider-thumb {
+          appearance: none;
+          width: 2.5rem;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          background-color: $Strong-Cyan;
+          background-image: url("./../images/icon-slider.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          box-shadow: 0 0 1rem $Strong-Cyan;
+          transition: all 750ms linear;
+          z-index: 1000;
+        }
+
+        &::-moz-silider-thumb {
+          appearance: none;
+          width: 2.5rem;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          background-color: $Strong-Cyan;
+          background-image: url("./../images/icon-slider.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          box-shadow: 0 0 1rem $Strong-Cyan;
+          transition: all 750ms linear;
+          z-index: 1000;
+        }
+
+        &::-o-slider-thumb {
+          appearance: none;
+          width: 2.5rem;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          background-color: $Strong-Cyan;
+          background-image: url("./../images/icon-slider.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          box-shadow: 0 0 1rem $Strong-Cyan;
+          transition: all 750ms linear;
+          z-index: 1000;
+        }
+
+        &::slider-thumb {
+          appearance: none;
+          width: 2.5rem;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          background-color: $Strong-Cyan;
+          background-image: url("./../images/icon-slider.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          box-shadow: 0 0 1rem $Strong-Cyan;
+          transition: all 750ms linear;
+          z-index: 1000;
+        }
+      }
+
+      .card__header__stat {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        span {
+          color: $Dark-Desaturated-Blue;
+          font-size: 2.25rem;
+          font-weight: bold;
+
+          @media (max-width: 576px) {
+            & {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+
+    .card__plan {
+      padding-block: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: $Grayish-Blue;
+      font-size: 0.75rem;
+
+      @media (max-width: 576px) {
+        & {
+          font-size: 0.7rem;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -2rem;
+        width: calc(100% + 4rem);
+        height: 0.1rem;
+        background-color: $Dark-Desaturated-Blue;
+        opacity: 0.1;
+
+        @media (max-width: 576px) {
+          & {
+            width: calc(100% + 3rem);
+            left: -1.5rem;
+          }
+        }
+      }
+
+      .card__plan--button {
+        margin-inline: 1rem;
+        width: 3rem;
+        height: 1.5rem;
+        border: none;
+        border-radius: 1rem;
+        background-color: $Light-Grayish-Blue2;
+        cursor: pointer;
+        position: relative;
+
+        span {
+          background-color: $White;
+          border-radius: 50%;
+          height: 1rem;
+          width: 1rem;
+          position: absolute;
+          top: 0;
+          right: 4px;
+          transform: translate(0, 25%);
+          transition: all 250ms linear;
+          z-index: 10;
+        }
+
+        .active--toggle {
+          right: 26px;
+        }
+      }
+
+      .active--btn {
+        background-color: $Soft-Cyan;
+      }
+
+      .card__plan__yaerly {
+        position: relative;
+
+        .discount {
+          margin-left: 0.5rem;
+          padding: 0.25rem;
+          background-color: $Light-Grayish-Red;
+          color: $Light-Red;
+          font-size: 0.625rem;
+          font-weight: bold;
+          border-radius: 1rem;
+        }
+
+        .desktop {
+          @media (max-width: 576px) {
+            & {
+              display: none;
+            }
+          }
+        }
+
+        .mobile {
+          display: none;
+
+          @media (max-width: 576px) {
+            & {
+              display: inline;
+            }
+          }
+        }
+      }
+    }
+
+    .card__props {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: $Grayish-Blue;
+
+      @media (max-width: 576px) {
+        & {
+          flex-direction: column;
+          font-size: 0.925rem;
+          gap: 1.5rem;
+        }
+      }
+
+      .card__props__list {
+        .card__props__item {
+          &:nth-of-type(2) {
+            margin-block: 0.5rem;
+          }
+        }
+        img {
+          width: auto;
+          height: auto;
+          margin-right: 0.5rem;
+        }
+      }
+
+      .card__props--button {
+        padding: 0.5rem 2rem;
+        font-size: 0.825rem;
+        border: none;
+        border-radius: 2rem;
+        color: $Light-Grayish-Blue2;
+        background-color: $Dark-Desaturated-Blue;
+        transition: color 250ms ease-in-out;
+        cursor: pointer;
+
+        @media (max-width: 576px) {
+          & {
+            padding: 0.75rem 2.5rem;
+          }
+        }
+
+        &:hover {
+          color: $White;
+        }
+      }
+    }
+  }
+}
+
+// special classes
+.screenreader {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}

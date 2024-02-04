@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Abdalla Rahmah" />
+    <meta name="keywords" content="HTML, CSS, Frontend Mentor" />
+    <meta name="description" content="Frontend Mentor challenge" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Interactive pricing component</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <h1 class="title">Simple, traffic-based pricing</h1>
+        <p class="description">
+          Sign-up for our 30-day trial. No credit card required.
+        </p>
+      </header>
+      <div class="card">
+        <div class="card__header">
+          <h2 class="screenreader">Select page views</h2>
+          <label id="views" class="card__header__title" for="billings"
+            >100K PAGEVIEWS</label
+          >
+          <input
+            type="range"
+            id="billings"
+            list="billings"
+            name="billings"
+            class="card__header--range"
+            min="1"
+            max="5"
+            step="1"
+          />
+          <label id="stats" class="card__header__stat" for="billings"
+            ><span id="price">$16.00</span>/month</label
+          >
+        </div>
+        <div class="card__plan">
+          <h2 class="screenreader">Select prefared billing method</h2>
+          <span class="card__plan__monthly">Monthly Billing</span>
+          <button id="discount-btn" class="card__plan--button">
+            <span id="plan-button-text" class="screenreader">Yearly</span
+            ><span id="toggle"></span>
+          </button>
+          <span class="card__plan__yaerly"
+            >Yearly Billing <span class="discount desktop">25% discount</span
+            ><span class="discount mobile">-25%</span></span
+          >
+        </div>
+        <div class="card__props">
+          <h2 class="screenreader">subscription benefits</h2>
+          <ul class="card__props__list">
+            <li class="card__props__item">
+              <img src="./images/icon-check.svg" alt="check" />Unlimited
+              websites
+            </li>
+            <li class="card__props__item">
+              <img src="./images/icon-check.svg" alt="check" />100% data
+              ownership
+            </li>
+            <li class="card__props__item">
+              <img src="./images/icon-check.svg" alt="check" />Email reports
+            </li>
+          </ul>
+          <button class="card__props--button">Start my trial</button>
+        </div>
+      </div>
+    </main>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
